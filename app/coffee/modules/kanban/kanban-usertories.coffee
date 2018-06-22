@@ -153,14 +153,14 @@ class KanbanUserstoriesService extends taiga.Service
             us.kanban_order = startIndex + key
             @.order[us.id] = us.kanban_order
 
-            modifiedUs.push({us_id: us.id, order: us.kanban_order})           
+            modifiedUs.push({us_id: us.id, order: us.kanban_order})
 
         @.refresh()
 
         return {
             bulkOrders: modifiedUs.concat(setPreviousOrders, setNextOrders),
             usList: modifiedUs,
-            set_orders: setOrders
+            setOrders: setOrders
         }
 
     moveToEnd: (id, statusId) ->
