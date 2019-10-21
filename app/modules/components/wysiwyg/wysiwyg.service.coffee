@@ -52,6 +52,30 @@ class WysiwygService
 
         return el.innerHTML
 
+    refreshAttachmentURL: (html) ->
+        el = document.createElement( 'html' )
+        el.innerHTML = html
+
+        regex = /#_taiga-refresh=(\d+)/
+
+        links = el.querySelectorAll('a')
+        for el in links
+            if el.getAttribute('href').indexOf('#_taiga-refresh=') == -1
+                match = el.getAttribute('href').match(regex)
+                console.log 'Refresh id=' match[1]
+                # Fetch attachment and substitute url
+                el.setAttribute('href', url)
+
+        links = el.querySelectorAll('img')
+        for el in links
+            if el.getAttribute('src').indexOf('#_taiga-refresh=') == -1
+                match = el.getAttribute('href').match(regex)
+                console.log 'Refresh id=' match[1]
+                # Fetch attachment and substitute url
+                el.setAttribute('src', url)
+
+        return el.innerHTML
+
     searchWikiLinks: (html) ->
         el = document.createElement( 'html' )
         el.innerHTML = html
@@ -180,9 +204,8 @@ class WysiwygService
         md.use(window.markdownitLazyHeaders)
         result = md.render(text)
         result = @.searchWikiLinks(result)
-
         result = @.autoLinkHTML(result)
-
+        result = @.refreshAttachmentURL(result)
         return result
 
 angular.module("taigaComponents")
