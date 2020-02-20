@@ -1325,7 +1325,7 @@
         "MOVE_US_TO_CURRENT_SPRINT": "Move to Current Sprint",
         "MOVE_US_TO_LATEST_SPRINT": "Move to latest Sprint",
         "EMPTY": "The backlog is empty!",
-        "CREATE_NEW_US": "Create a new US",
+        "CREATE_NEW_US": "Create a new user story",
         "CREATE_NEW_US_EMPTY_HELP": "You may want to create a new user story",
         "EXCESS_OF_POINTS": "Excess of points",
         "PENDING_POINTS": "Pending Points",
@@ -1811,7 +1811,7 @@
             },
             "STEP3": {
                 "TITLE": "Adding User Stories",
-                "TEXT1": "You may want to add a single user story (add US icon) or a group of them (bulk icon)",
+                "TEXT1": "You may want to add a single user story (add user story icon) or a group of them (bulk icon)",
                 "TEXT2": "Good luck!"
             }
         }
