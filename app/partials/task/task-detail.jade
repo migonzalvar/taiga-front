@@ -40,7 +40,7 @@ div.wrapper(
 
                 //- User Stories generated from task
                 .detail-header-line.item-generated-us(ng-if="task.generated_user_stories.length")
-                    span(ng-bind="'COMMON.PROMOTED_'+task._name.toUpperCase() | translate")
+                    span(ng-bind="'COMMON.PROMOTED_TASKS' | translate")
                     a(
                         ng-repeat="userstory in task.generated_user_stories track by userstory.id"
                         tg-check-permission="view_us"

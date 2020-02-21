@@ -35,7 +35,7 @@ div.wrapper(
                     ng-if="issue.generated_user_stories.length"
                     tg-check-permission="view_us"
                 )
-                    span(ng-bind="'COMMON.PROMOTED_'+issue._name.toUpperCase() | translate")
+                    span(ng-bind="'COMMON.PROMOTED_ISSUES' | translate")
                     a.primary(
                         ng-repeat="userstory in issue.generated_user_stories track by userstory.id"
                         tg-nav="project-userstories-detail:project=project.slug,ref=userstory.ref"
